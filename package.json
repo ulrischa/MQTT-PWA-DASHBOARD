@@ -1,0 +1,16 @@
+{
+  "name": "mqtt-pwa-dashboard",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "node tests/integration.mjs && node tests/ui.mjs && node tests/pwa.mjs"
+  },
+  "devDependencies": {
+    "aedes": "0.51.3",
+    "fake-indexeddb": "6.2.4",
+    "mqtt": "5.14.1",
+    "ws": "8.18.3",
+    "jsdom": "26.1.0"
+  }
+}

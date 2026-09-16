@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="theme-color" content="#11171d" />
+    <meta
+      name="description"
+      content="Lokale MQTT Workbench mit Live-Nachrichten, Dashboard und Automationen"
+    />
+    <title>MQTT-PWA-DASHBOARD</title>
+    <link
+      rel="manifest"
+      href="manifest.webmanifest"
+      crossorigin="use-credentials"
+    />
+    <link rel="icon" href="favicon-32.png" sizes="32x32" type="image/png" />
+    <link rel="apple-touch-icon" href="apple-touch-icon.png" sizes="180x180" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta
+      name="apple-mobile-web-app-status-bar-style"
+      content="black-translucent"
+    />
+    <meta name="apple-mobile-web-app-title" content="MQTT Dashboard" />
+    <link rel="stylesheet" href="style.css" />
+    <script defer src="vendor/mqtt.min.js"></script>
+    <script type="module" src="app.js"></script>
+  </head>
+  <body>
+    <aside id="sidebar">
+      <a class="brand" href="#"
+        ><img
+          class="brand-icon"
+          src="icon-192.png"
+          alt=""
+          width="40"
+          height="40"
+        /><span>MQTT<span class="brand-sub">PWA DASHBOARD</span></span></a
+      >
+      <div class="side-label">WORKSPACE</div>
+      <nav id="nav"></nav>
+      <div class="side-heading">
+        <span>BROKER</span
+        ><button data-action="broker-add" title="Broker hinzufügen">＋</button>
+      </div>
+      <div id="brokers"></div>
+      <button class="side-add" data-action="broker-add">
+        ＋ Broker hinzufügen
+      </button>
+      <div class="side-heading"><span>FAVORITEN</span><span>☆</span></div>
+      <div id="favorites"></div>
+      <div class="side-bottom">
+        <span class="local-dot"></span> Lokal in deinem Browser
+        <button data-action="help" title="Hilfe">?</button>
+      </div>
+    </aside>
+    <main>
+      <header>
+        <div class="breadcrumb">
+          Workspace <span>/</span> <b id="view-name">Dashboard</b>
+        </div>
+        <div class="header-actions">
+          <span id="connection-summary"></span
+          ><button data-action="install" id="install">↓ App installieren</button
+          ><button data-action="settings" aria-label="Einstellungen">⚙</button>
+        </div>
+      </header>
+      <div class="workspace">
+        <div class="page-heading">
+          <div>
+            <div class="eyebrow">MQTT-PWA-DASHBOARD</div>
+            <h1 id="title">Dashboard</h1>
+            <p id="subtitle">Deine Geräte. Deine Daten. Alles im Blick.</p>
+          </div>
+          <div id="page-actions"></div>
+        </div>
+        <div id="demo-banner" class="banner">
+          <span
+            ><b>Demo-Workspace</b> · Simulierte Daten, keine externe
+            Verbindung.</span
+          ><button data-action="demo-toggle">Demo starten</button>
+        </div>
+        <div id="content"></div>
+      </div>
+      <footer>
+        <span id="footer-status">Bereit</span
+        ><span>MQTT over WebSocket <span class="divider">/</span> v1.0</span>
+      </footer>
+    </main>
+    <dialog id="modal" aria-labelledby="modal-title">
+      <div class="dialog-head">
+        <h2 id="modal-title"></h2>
+        <button data-action="close" aria-label="Schließen">×</button>
+      </div>
+      <div id="modal-body"></div>
+    </dialog>
+    <div id="toast" role="status"></div>
+    <input
+      id="import-file"
+      type="file"
+      accept="application/json,.json"
+      hidden
+    />
+  </body>
+</html>

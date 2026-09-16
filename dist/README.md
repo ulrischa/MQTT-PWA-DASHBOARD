@@ -1,6 +1,6 @@
 # MQTT-PWA-DASHBOARD
 
-<p align="center"><img src="dist/icon-512.png" width="160" height="160" alt="MQTT-PWA-DASHBOARD icon"></p>
+<p align="center"><img src="icon-512.png" width="160" height="160" alt="MQTT-PWA-DASHBOARD icon"></p>
 
 A browser-only MQTT workbench with multiple brokers, live messages, dashboards and an encrypted local vault. Created for **Uli**. Built with plain JavaScript, HTML and CSS. **No PHP, backend, cloud database or continuously running server process.** The interface is German; this documentation is English.
 
@@ -55,7 +55,7 @@ After deploying an update, close every tab/window of the app and reopen it. The 
 | Security | Master-passphrase vault, encrypted backups, password change, manual lock and inactive-tab lock |
 | PWA | Dedicated application icons, responsive layout, installation support and cached offline shell |
 
-The **demo broker is local simulation only**, with clearly labeled sample data. It never connects to a public MQTT broker. Real brokers connect only after the user selects Connect. The app has no analytics, external fonts or runtime CDN dependencies. MQTT.js 5.14.1 is bundled locally; see its [MIT license](dist/vendor/MQTT-LICENSE.md).
+The **demo broker is local simulation only**, with clearly labeled sample data. It never connects to a public MQTT broker. Real brokers connect only after the user selects Connect. The app has no analytics, external fonts or runtime CDN dependencies. MQTT.js 5.14.1 is bundled locally; see its [MIT license](vendor/MQTT-LICENSE.md).
 
 ## Local data security
 
